@@ -1,0 +1,1 @@
+const Summit = Object.create
