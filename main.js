@@ -29,23 +29,38 @@ function makeObj(businessName, startDate, endDate, job, liked) {
     return obj
 }  
 
-const summit = makeObj("The Summit", '11-11-11', 'waitress', 'Eating the food')
-const sales = makeObj('LogoNation', '01-01-12', '03-20-12', 'Outside Sales Rep', 'Getting a sale')
-const pharm = makeObj('Blacksburg Pharmacy', '05-15-15', '05-04-18', 'Technician', 'Coworkers')
-const QMC = makeObj("OMC Addiction Clinic", "12-15-14", "12-30-15", "urine collector", "Talking to patients")
+let summit = makeObj("The Summit", '11-11-11', 'waitress', 'Eating the food')
+let sales = makeObj('LogoNation', '01-01-12', '03-20-12', 'Outside Sales Rep', 'Getting a sale')
+let pharm = makeObj('Blacksburg Pharmacy', '05-15-15', '05-04-18', 'Technician', 'Coworkers')
+let QMC = makeObj("OMC Addiction Clinic", "12-15-14", "12-30-15", "urine collector", "Talking to patients")
 
-//let objectToArray = function(makeObj) {
-  //        var _arr = [];
-    //      for (var key in makeObj) {
-      //        _arr.push([key, makeObj[key]]);
-        //  }
-          //return _arr;
-       // }
-//console.log(objectToArray(summit));
+//console.log(summit)
+
+//Creating an array of the objects
+let _arry = [];
+_arry.push(summit, sales, pharm, QMC);
+
+//console.log(_arry);
+
+//Define making Articles
+const writeArticles = (_arry) => { 
+
+//Create a loop to iterate over the array
+if (_arry.length > 0) {
+    for (var property in _arry) {
+        let job = _arry[property]; 
+
+        const newArticle = document.createElement('article')
+        newArticle.id = job.name;
+        document.body.appendChild(newArticle);
+
+    }
 
 
-//var a = makeObj("Mcdonalds", "Febuary 2012")
-
-//const JobMaker = (business, employmentStart, employmentEnd, jobTitle) {
-  //  return "I worked at " + business + ' from ' + employmentStart + ' until ' + employmentEnd +' as a ' + jobTitle + ' .'
+}
+  //  list = list + _arry[property]
 //}
+//console.log('making a list', list)
+
+//g = document.createElement('article')
+//g.setAttribute('id', )
